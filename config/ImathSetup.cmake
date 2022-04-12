@@ -66,7 +66,7 @@ option(BUILD_SHARED_LIBS "Build shared library" ON)
 
 # Suffix to append to root name, this helps with version management
 # but can be turned off if you don't care, or otherwise customized
-set(IMATH_LIB_SUFFIX "-${IMATH_VERSION_API}" CACHE STRING "string added to the end of all the libraries")
+set(IMATH_LIB_SUFFIX "_sidefx" CACHE STRING "string added to the end of all the libraries")
 
 # When building static, the additional string to add to the library name such
 # that a static build of Imath is easily distinguishable.
