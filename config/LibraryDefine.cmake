@@ -78,8 +78,13 @@ function(IMATH_DEFINE_LIBRARY libname)
     target_link_libraries(${libname} PUBLIC ${IMATH_EXTRA_LIBS})
   endif()
 
+  set(IMATH_LIB_PREFIX)
+  if(WIN32 AND NOT BUILD_SHARED_LIBS)
+      set(IMATH_LIB_PREFIX "lib")
+  endif()
+
   set_target_properties(${libname} PROPERTIES
-      OUTPUT_NAME "${libname}${IMATH_LIB_SUFFIX}"
+      OUTPUT_NAME "${IMATH_LIB_PREFIX}${libname}${IMATH_LIB_SUFFIX}"
       RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
   )
   add_library(${PROJECT_NAME}::${libname} ALIAS ${libname})
