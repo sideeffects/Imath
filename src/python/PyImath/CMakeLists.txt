@@ -141,7 +141,7 @@ target_include_directories(${PYIMATH_LIBRARY}
 target_compile_definitions(${PYIMATH_LIBRARY} PRIVATE IMATH_EXPORTS)
 
 target_link_libraries(${PYIMATH_LIBRARY} PUBLIC Imath)
-target_link_libraries(${PYIMATH_LIBRARY} PRIVATE Boost::boost Boost::python Python3::Module)
+target_link_libraries(${PYIMATH_LIBRARY} PRIVATE Boost::boost Boost::python${Python3_VERSION_MAJOR}${Python3_VERSION_MINOR} Python3::Module)
 
 set_property(TARGET ${PYIMATH_LIBRARY} PROPERTY PUBLIC_HEADER ${PYIMATH_HEADERS})
 
@@ -186,7 +186,7 @@ target_link_libraries(${PYIMATH_MODULE}
         ${PYIMATH_LIBRARY}
         Imath::Imath
         Boost::boost
-        Boost::python
+        Boost::python${Python3_VERSION_MAJOR}${Python3_VERSION_MINOR}
         Python3::Module
 )
 

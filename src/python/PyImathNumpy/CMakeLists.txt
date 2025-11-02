@@ -44,7 +44,7 @@ target_link_libraries(${PYIMATHNUMPY_MODULE}
         Imath::Config
         PyImath
         Boost::boost
-        Boost::python
+        Boost::python${Python3_VERSION_MAJOR}${Python3_VERSION_MINOR}
         Python3::Module
 )
 
